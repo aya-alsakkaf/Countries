@@ -36,8 +36,9 @@ export default async function Home() {
       <main className="grid grid-cols-4 gap-4 min-h-screen items-center justify-between p-14">
         {
           countries.map(country => (
+            <div key={country.id}>
             <Link href={`/${country.id}/`}>
-            <div key = {country.id} className='bg-white rounded overflow-hidden shadow-md'>
+            <div className='bg-white rounded overflow-hidden shadow-md'>
             <img src={`${country.flags}`}className='w-full h-32 sm:h-48 object-cover' />
             <div className='m-4'>
               <span className='font-bold'>{country.name}</span>
@@ -45,6 +46,7 @@ export default async function Home() {
             </div>
           </div>
           </Link>
+          </div>
           ))
         }
 
