@@ -37,8 +37,8 @@ export default async function Home() {
         {
           countries.map(country => (
             <Link href={`/${country.id}/`}>
-            <div className='bg-white rounded overflow-hidden shadow-md'>
-            <img key = {country.id} src={`${country.flags}`}className='w-full h-32 sm:h-48 object-cover' />
+            <div key = {country.id} className='bg-white rounded overflow-hidden shadow-md'>
+            <img src={`${country.flags}`}className='w-full h-32 sm:h-48 object-cover' />
             <div className='m-4'>
               <span className='font-bold'>{country.name}</span>
               <span className='block'>Capital: {country.capital}</span>
