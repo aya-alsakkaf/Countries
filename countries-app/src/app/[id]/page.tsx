@@ -1,5 +1,6 @@
 import prisma from '../../../lib/prisma'
 import BackButton from '../components/backButton'
+import Iframe from 'react-iframe'
 
 interface pageProps {
     params: {
@@ -25,7 +26,7 @@ async function page({ params }: pageProps) {
                     <span className='block text-xl'><strong className='text-focusedText'>Region: </strong> {country?.region}</span>
                     <span className='block text-xl'><strong className='text-focusedText'>Subregion:</strong> {country?.subregion}</span>
                     <span className='block text-xl'><strong className='text-focusedText'>Population: </strong> {country?.population}</span>
-                    <iframe src={`${country?.map}`} className='w-full mt-4' height="400" ></iframe>
+                    <Iframe url={`${country?.map}`} className="w-full mt-4" height='400px'></Iframe>
                 </div>
             </div>
         </div>
