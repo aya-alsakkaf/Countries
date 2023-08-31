@@ -3,6 +3,8 @@ import {countries} from "../data/countries";
 
 const prisma = new PrismaClient()
 
+
+// Populating the database from the information extracted from the API 
 async function main(){
     await prisma.country.createMany({
         data: countries,

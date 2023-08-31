@@ -1,3 +1,5 @@
+//JS file to fetch data from the API and write it to a file countries.ts
+
 const fs = require('fs');
 // Make the API request
 const url = "https://restcountries.com/v3.1/all";
