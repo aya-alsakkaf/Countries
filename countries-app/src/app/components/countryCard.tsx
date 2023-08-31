@@ -21,7 +21,7 @@ type countryProp={
 
 export const CountryCard = ({countries}:countryProp) => {
     return (
-        <main className="grid grid-cols-4 gap-4 items-center justify-between p-14 scroll-smooth">
+        <main className="grid lg:grid-cols-4 gap-4 sm:grid-cols-2 md:grid-cols-2 items-center justify-between p-14 scroll-smooth">
         { 
       
           countries.map(country => (
