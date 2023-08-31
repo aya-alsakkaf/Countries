@@ -1,5 +1,7 @@
 import Link from "next/link"
 
+//component that displays a back button and returns the user to the home page
+
 export default function BackButton(){
     return (
         <Link href='/' className='font-bold'>

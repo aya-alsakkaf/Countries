@@ -2,7 +2,10 @@ import prisma from '../../lib/prisma'
 import { CountryCard } from './components/countryCard';
 import SearchBar from './components/searchBar';
 
+//main page where the user can search for a country or view all the countries
 
+
+//getCountries returns all the countries in the database
 function getCountries() {
   return prisma.country.findMany()
 }

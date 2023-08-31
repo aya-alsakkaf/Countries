@@ -1,10 +1,11 @@
-
 import Link from "next/link"
 import prisma from "../../../lib/prisma"
 import { CountryCard } from "../components/countryCard"
 import SearchBar from "../components/searchBar"
 import BackButton from "../components/backButton"
 
+
+// Takes in the query from the URL and returns a list of countries that match the query
 interface SearchPageProps{
     searchParams: {query:string}
 }

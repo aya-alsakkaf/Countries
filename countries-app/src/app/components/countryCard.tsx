@@ -1,5 +1,7 @@
 import Link from "next/link"
 
+// Component that displays the countries in a grid
+
 type countries = {
     id: number;
     name: string;

@@ -2,6 +2,8 @@ import prisma from '../../../lib/prisma'
 import BackButton from '../components/backButton'
 import Iframe from 'react-iframe'
 
+//Page that displays the information of a country based on the id
+
 interface pageProps {
     params: {
         id: number

@@ -1,5 +1,7 @@
 import { redirect } from "next/navigation";
 
+//Search Bar component that redirects the user to the search page with the query in the URL
+
 async function searchCountry(formData: FormData){
     "use server";
     const search = formData.get("name")?.toString();
