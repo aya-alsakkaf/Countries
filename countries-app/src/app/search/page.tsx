@@ -18,7 +18,17 @@ export default async function SearchPage({searchParams:{query}} : SearchPageProp
     )
 
     if (countries.length === 0){
-        return <div className="text-center">No Country found</div>
+        return (
+          <div className="items-center">
+
+            <SearchBar></SearchBar>
+
+            <h1 className="text-center text-red-600 text-3xl mt-8">No Country Found</h1>
+
+          </div>
+        
+        
+        )
     }
     else{
         return (
