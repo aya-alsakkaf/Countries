@@ -1,10 +1,12 @@
-
-import Link from 'next/link'
 import prisma from '../../lib/prisma'
+import { CountryCard } from './components/countryCard';
+import SearchBar from './components/searchBar';
+
 
 function getCountries() {
   return prisma.country.findMany()
 }
+
 
 export default async function Home() {
 
@@ -12,45 +14,12 @@ export default async function Home() {
 
   return (
     <div>
-      <nav className='m-4'>
-        <form >
-          <label className='mb-2 text-sm font-medium text-grey-900 sr-only dark:text-white'>Seach</label>
-          <div className="relative">
-            <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-              <svg className="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-              </svg>
-            </div>
-            <input type="search" id="name" name='name' 
-            className="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-             placeholder="Enter a Country" required />
-            <button type="submit" className="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
-          </div>
-        </form>
-      </nav>
-
+      <SearchBar/>
       <div className=''>
-        <h1 className='text-center font-bold text-2xl mt-4'> List Of Countries </h1>
+        <h1 className='text-center font-bold text-white text-2xl mt-9'> List Of Countries </h1>
       </div>
-
-      <main className="grid grid-cols-4 gap-4 min-h-screen items-center justify-between p-14">
-        {
-          countries.map(country => (
-            <div key={country.id}>
-            <Link href={`/${country.id}/`}>
-            <div className='bg-white rounded overflow-hidden shadow-md'>
-            <img src={`${country.flags}`}className='w-full h-32 sm:h-48 object-cover' />
-            <div className='m-4'>
-              <span className='font-bold'>{country.name}</span>
-              <span className='block'>Capital: {country.capital}</span>
-            </div>
-          </div>
-          </Link>
-          </div>
-          ))
-        }
-
-      </main>
+    
+      <CountryCard countries={countries} />
 
     </div>
   )
